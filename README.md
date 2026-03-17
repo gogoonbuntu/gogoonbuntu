@@ -1,30 +1,28 @@
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=Gogoonbuntu&fontSize=60&fontAlignY=36&desc=✌%20Positive%20Recognize%20Positive%20☆&descSize=16&descAlignY=56&animation=twinkling" width="100%" />
+
 <div align="center">
 
-# 👋 반갑습니다! I'm **Gogoonbuntu**
-
-### ✌ *Positive Recognize Positive* ☆
-
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fgogoonbuntu&count_bg=%2379C83D&title_bg=%23555555&icon=github.svg&icon_color=%23E7E7E7&title=Profile+Views&edge_flat=false)](https://github.com/gogoonbuntu)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&random=false&width=500&lines=Full-Stack+Developer+%F0%9F%9A%80;React+%7C+Next.js+%7C+Firebase+%F0%9F%94%A5;Building+Communities+%F0%9F%8C%8F;Always+Learning+%F0%9F%93%9A)](https://git.io/typing-svg)
 
 </div>
 
 ---
 
-## 🚀 About Me
+## 🧑‍💻 About Me
 
 ```yaml
-name: Gogoonbuntu
-location: 🇰🇷 Korea
+name: Gogoonbuntu (정승영)
+location: 🇰🇷 South Korea
 role: Independent Full-Stack Developer
-blog: gogoonbuntu.tistory.com
 motto: "✌ Positive Recognize Positive ☆"
+currently_building:
+  - KLS Connect — 한국리더십학교 동문 네트워크 플랫폼
+  - Mother-Father Diary — 가족 다이어리 앱
+past_highlights:
+  - 3D Gallery — 몰입감 있는 가상 전시회 플랫폼
+  - Moneygemnet — 금융 교육 게이미피케이션 플랫폼
+  - GDG 행사 UX 디자인 발표
 ```
-
-- 🔭 현재 **KLS Connect** — 한국리더십학교 동문 네트워크 플랫폼을 개발하고 있습니다
-- 🎨 **3D Gallery** — 몰입감 있는 가상 전시회 플랫폼을 만들었습니다
-- 📱 **Mother-Father Diary** — 가족 다이어리 앱을 개발 중입니다
-- 🎮 **Moneygemnet** — 금융 위기를 모험하며 배우는 교육 플랫폼에 참여했습니다
-- 🎤 GDG(Google Developers Group) 행사에서 UX 디자인 발표 경험
 
 ---
 
@@ -54,7 +52,7 @@ motto: "✌ Positive Recognize Positive ☆"
 #### Tools
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
-![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)
+![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)
 
 </div>
 
@@ -64,12 +62,12 @@ motto: "✌ Positive Recognize Positive ☆"
 
 <div align="center">
 
-| Project | Description | Tech |
-|---------|-------------|------|
-| [**KLS Connect**](https://github.com/gogoonbuntu/kls-connect) | 🌏 한국리더십학교 동문 네트워크 플랫폼 (Web + Mobile) | Next.js, Expo, Firebase |
-| [**3D Gallery**](https://github.com/gogoonbuntu/3Dgallery) | 🎨 몰입감 있는 3D 가상 전시회 플랫폼 | TypeScript, Three.js |
-| [**Moneygemnet**](https://github.com/MoneygementTeam/front) | 💰 과거 경제 위기를 모험하며 금융 지식을 배우는 플랫폼 | JavaScript |
-| [**GDG UX Presentation**](https://github.com/gogoonbuntu/GDG-UX-Design-Presentation) | 🎤 GDG 행사 UX 디자인 발표 자료 | JavaScript |
+| | Project | Description | Tech |
+|:-:|---------|-------------|------|
+| 🌏 | [**KLS Connect**](https://github.com/gogoonbuntu/kls-connect) | 한국리더십학교 동문 네트워크 플랫폼 (Web + Mobile) | Next.js · Expo · Firebase |
+| 🎨 | [**3D Gallery**](https://github.com/gogoonbuntu/3Dgallery) | 몰입감 있는 3D 가상 전시회 플랫폼 | TypeScript · Three.js |
+| 💰 | [**Moneygemnet**](https://github.com/MoneygementTeam/front) | 과거 경제 위기를 모험하며 금융 지식을 배우는 플랫폼 | JavaScript |
+| 🎤 | [**GDG UX Presentation**](https://github.com/gogoonbuntu/GDG-UX-Design-Presentation) | GDG 행사 UX 디자인 발표 자료 | JavaScript |
 
 </div>
 
@@ -90,35 +88,50 @@ motto: "✌ Positive Recognize Positive ☆"
 
 ---
 
-## 🏆 GitHub Trophies
+## 📈 Contribution Graph
 
 <div align="center">
 
-[![trophy](https://github-profile-trophy.vercel.app/?username=gogoonbuntu&theme=tokyonight&no-frame=true&no-bg=true&column=7&margin-w=10)](https://github.com/gogoonbuntu)
+[![Gogoonbuntu's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=gogoonbuntu&bg_color=0d1117&color=58a6ff&line=58a6ff&point=ff6b6b&area=true&area_color=58a6ff&hide_border=true)](https://github.com/gogoonbuntu)
 
 </div>
 
 ---
 
-## 🐍 Contribution Graph
+## 🐍 Snake Eating Contributions
 
 <div align="center">
 
-![Snake animation](https://raw.githubusercontent.com/gogoonbuntu/gogoonbuntu/output/github-snake-dark.svg)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/gogoonbuntu/gogoonbuntu/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/gogoonbuntu/gogoonbuntu/output/github-snake.svg" />
+  <img alt="github-snake" src="https://raw.githubusercontent.com/gogoonbuntu/gogoonbuntu/output/github-snake-dark.svg" />
+</picture>
+
+> ⚡ *Snake는 레포 생성 후 GitHub Action이 한 번 실행되면 나타납니다! Actions 탭 → "Generate Snake" → "Run workflow" 클릭*
 
 </div>
 
 ---
 
+## 🔗 Connect with Me
+
 <div align="center">
 
-### 📫 Connect with me
-
+[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/channel/UCsY94STf222jUueLIh2t-_w)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/seung0j/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/seung-young-jung-57872918a/)
+[![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)](https://gogoonbuntu.notion.site/874149def66d434789034549080e91db)
 [![Blog](https://img.shields.io/badge/Tistory-000000?style=for-the-badge&logo=tistory&logoColor=white)](https://gogoonbuntu.tistory.com)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/gogoonbuntu)
 
-<br/>
+</div>
+
+---
+
+<div align="center">
+
+![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fgogoonbuntu&count_bg=%2358A6FF&title_bg=%230D1117&icon=github.svg&icon_color=%2358A6FF&title=Profile+Views&edge_flat=true)
+
+</div>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer" width="100%" />
-
-</div>
