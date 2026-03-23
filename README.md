@@ -63,7 +63,8 @@ past_highlights:
 ## 🚀 My Services — Live & Deployed
 
 > 모든 프로젝트는 **기획 → 설계 → 개발 → 배포**까지 1인 풀스택으로 완성했습니다.  
-> Private 저장소의 상세 README는 각 프로젝트 링크에서 확인할 수 있습니다.
+> 📖 각 프로젝트의 **상세 README** (기술 아키텍처, 회고, 스크린샷)는 [`projects/`](projects/) 폴더에서 확인할 수 있습니다.  
+> 🔄 *README는 매일 자동으로 원본 저장소와 동기화됩니다.*
 
 <div align="center">
 

@@ -1,0 +1,105 @@
+name: 📄 Sync Project READMEs
+
+on:
+  schedule:
+    - cron: '0 3 * * *'  # 매일 KST 12:00 (UTC 03:00)
+  workflow_dispatch:  # 수동 실행 가능
+
+jobs:
+  sync-readmes:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout profile repo
+        uses: actions/checkout@v4
+
+      - name: Sync 3D Gallery README
+        uses: actions/checkout@v4
+        with:
+          repository: gogoonbuntu/3Dgallery
+          token: ${{ secrets.PRIVATE_REPO_PAT }}
+          path: _tmp/3dgallery
+          sparse-checkout: |
+            README.md
+            screenshots
+
+      - name: Sync Chiwi Pixel RPG README
+        uses: actions/checkout@v4
+        with:
+          repository: gogoonbuntu/chiwiPixelRpg
+          token: ${{ secrets.PRIVATE_REPO_PAT }}
+          path: _tmp/chiwi-pixel-rpg
+          sparse-checkout: |
+            README.md
+            docs/screenshots
+
+      - name: Sync KLS Connect README
+        uses: actions/checkout@v4
+        with:
+          repository: gogoonbuntu/kls-connect
+          token: ${{ secrets.PRIVATE_REPO_PAT }}
+          path: _tmp/kls-connect
+          sparse-checkout: |
+            README.md
+            docs/screenshots
+            expo-app/screenshots
+
+      - name: Sync WhaleFriend README
+        uses: actions/checkout@v4
+        with:
+          repository: gogoonbuntu/whalefriend
+          token: ${{ secrets.PRIVATE_REPO_PAT }}
+          path: _tmp/whalefriend
+          sparse-checkout: |
+            README.md
+            assets/icon.png
+            docs/screenshots
+
+      - name: Sync Card RPG README
+        uses: actions/checkout@v4
+        with:
+          repository: gogoonbuntu/cardrpg
+          token: ${{ secrets.PRIVATE_REPO_PAT }}
+          path: _tmp/cardrpg
+          sparse-checkout: |
+            README.md
+
+      - name: Copy READMEs and screenshots to projects/
+        run: |
+          # 3D Gallery
+          cp _tmp/3dgallery/README.md projects/3dgallery/README.md
+          rsync -a --delete --include='*.png' --include='*.jpg' --include='*.jpeg' --include='*.gif' --include='*/' --exclude='*' _tmp/3dgallery/screenshots/ projects/3dgallery/screenshots/
+
+          # Chiwi Pixel RPG
+          cp _tmp/chiwi-pixel-rpg/README.md projects/chiwi-pixel-rpg/README.md
+          rsync -a --delete --include='*.png' --include='*.jpg' --include='*/' --exclude='*' _tmp/chiwi-pixel-rpg/docs/screenshots/ projects/chiwi-pixel-rpg/docs/screenshots/
+
+          # KLS Connect
+          cp _tmp/kls-connect/README.md projects/kls-connect/README.md
+          rsync -a --delete --include='*.png' --include='*.jpg' --include='*/' --exclude='*' _tmp/kls-connect/docs/screenshots/ projects/kls-connect/docs/screenshots/
+          rsync -a --delete --include='*.png' --include='*.jpg' --include='*/' --exclude='*' _tmp/kls-connect/expo-app/screenshots/ projects/kls-connect/expo-app/screenshots/
+
+          # WhaleFriend
+          cp _tmp/whalefriend/README.md projects/whalefriend/README.md
+          cp _tmp/whalefriend/assets/icon.png projects/whalefriend/assets/icon.png
+          rsync -a --delete --include='*.png' --include='*.jpg' --include='*/' --exclude='*' _tmp/whalefriend/docs/screenshots/ projects/whalefriend/docs/screenshots/
+
+          # Card RPG
+          cp _tmp/cardrpg/README.md projects/cardrpg/README.md
+
+          # Cleanup
+          rm -rf _tmp
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add projects/
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "📄 Sync project READMEs [automated]"
+            git push
+          fi
