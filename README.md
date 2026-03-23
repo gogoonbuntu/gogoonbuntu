@@ -16,12 +16,14 @@ location: 🇰🇷 South Korea
 role: Independent Full-Stack Developer
 motto: "✌ Positive Recognize Positive ☆"
 currently_building:
+  - 3D Gallery — 몰입감 있는 3D 가상 전시회 플랫폼
+  - Chiwi: Divine Line Defense — 2D 픽셀 라인 디펜스 RPG
   - KLS Connect — 한국리더십학교 동문 네트워크 플랫폼
-  - Mother-Father Diary — 가족 다이어리 앱
+  - WhaleFriend — 향유고래 소통 시뮬레이션 웹앱
+  - Card RPG Arena — 카드 배틀 RPG
 past_highlights:
-  - 3D Gallery — 몰입감 있는 가상 전시회 플랫폼
-  - Moneygemnet — 금융 교육 게이미피케이션 플랫폼
   - GDG 행사 UX 디자인 발표
+  - Moneygemnet — 금융 교육 게이미피케이션 플랫폼
 ```
 
 ---
@@ -58,14 +60,107 @@ past_highlights:
 
 ---
 
-## 📌 Featured Projects
+## 🚀 My Services — Live & Deployed
+
+> 모든 프로젝트는 **기획 → 설계 → 개발 → 배포**까지 1인 풀스택으로 완성했습니다.  
+> Private 저장소의 상세 README는 각 프로젝트 링크에서 확인할 수 있습니다.
+
+<div align="center">
+
+<table>
+<tr>
+<td align="center" width="50%">
+<a href="https://3-dgallery.vercel.app">
+<img src="screenshots/showcase/3dgallery.png" width="100%" alt="3D Gallery" />
+</a>
+<br/>
+<h3>🎨 온전 Onliex — 3D Virtual Gallery</h3>
+<p><em>「예술은 공간에서 경험되어야 한다」</em></p>
+<p>코드 한 줄 없이 3D 가상 갤러리를 개설하고, 방문자들이 실시간 멀티플레이어로 함께 감상하는 몰입형 전시회 플랫폼</p>
+<p>
+<img src="https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=white" />
+<img src="https://img.shields.io/badge/Three.js-000?style=flat-square&logo=threedotjs&logoColor=white" />
+<img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black" />
+</p>
+<a href="https://3-dgallery.vercel.app"><img src="https://img.shields.io/badge/▶_LIVE_DEMO-667eea?style=for-the-badge&labelColor=1a1a2e" alt="Live" /></a>
+</td>
+<td align="center" width="50%">
+<a href="https://chiwi-pixel-rpg.vercel.app">
+<img src="screenshots/showcase/chiwi.png" width="100%" alt="Chiwi: Divine Line Defense" />
+</a>
+<br/>
+<h3>⚔️ Chiwi: Divine Line Defense</h3>
+<p><em>「신의 선을 지켜라 — 25,000줄의 풀 Canvas 게임」</em></p>
+<p>5종 직업 × 18종 무기 × 10개 필드, Canvas 2D로 구현한 라인 디펜스 RPG. 341개 밸런스 테스트 자동 검증</p>
+<p>
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
+<img src="https://img.shields.io/badge/Canvas_2D-F7DF1E?style=flat-square&logo=html5&logoColor=black" />
+<img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white" />
+</p>
+<a href="https://chiwi-pixel-rpg.vercel.app"><img src="https://img.shields.io/badge/▶_PLAY_NOW-ff6b6b?style=for-the-badge&labelColor=1a1a2e" alt="Play" /></a>
+</td>
+</tr>
+<tr>
+<td align="center" width="50%">
+<a href="https://v0-klsconnect3.vercel.app">
+<img src="screenshots/showcase/klsconnect.png" width="100%" alt="KLS Connect" />
+</a>
+<br/>
+<h3>🌏 KLS Connect — 동문 네트워크</h3>
+<p><em>「1,000명의 동문을 하나로 잇다」</em></p>
+<p>AI 추천 피드 · 인터랙티브 지도 · 11종 미니게임 · 푸시 알림 — 웹 + iOS + Android 크로스플랫폼 커뮤니티</p>
+<p>
+<img src="https://img.shields.io/badge/Next.js-000?style=flat-square&logo=nextdotjs&logoColor=white" />
+<img src="https://img.shields.io/badge/Expo-000020?style=flat-square&logo=expo&logoColor=white" />
+<img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black" />
+</p>
+<a href="https://v0-klsconnect3.vercel.app"><img src="https://img.shields.io/badge/▶_LIVE_DEMO-10b981?style=for-the-badge&labelColor=1a1a2e" alt="Live" /></a>
+</td>
+<td align="center" width="50%">
+<a href="https://whalefriend.vercel.app">
+<img src="screenshots/showcase/whalefriend.png" width="100%" alt="WhaleFriend" />
+</a>
+<br/>
+<h3>🐋 WhaleFriend — 고래 소통 시뮬레이터</h3>
+<p><em>「고래에게 말을 건네보세요 — 논문 기반 코다 시뮬레이션」</em></p>
+<p>6개 해역 × 18마리 고래 × 과학적 코다 합성. 3D 수중 장면에서 향유고래와 대화하는 몰입형 웹앱</p>
+<p>
+<img src="https://img.shields.io/badge/Three.js-000?style=flat-square&logo=threedotjs&logoColor=white" />
+<img src="https://img.shields.io/badge/Gemini_AI-4285F4?style=flat-square&logo=google&logoColor=white" />
+<img src="https://img.shields.io/badge/Web_Audio-FF6B6B?style=flat-square" />
+</p>
+<a href="https://whalefriend.vercel.app"><img src="https://img.shields.io/badge/▶_DIVE_IN-4a9eff?style=for-the-badge&labelColor=1a1a2e" alt="Dive" /></a>
+</td>
+</tr>
+<tr>
+<td align="center" colspan="2">
+<a href="https://cardrpg.vercel.app">
+<img src="screenshots/showcase/cardrpg.png" width="50%" alt="Card RPG Arena" />
+</a>
+<br/>
+<h3>🃏 Card RPG Arena</h3>
+<p><em>「카드를 수집하고, 덱을 짜고, 전투에서 승리하라」</em></p>
+<p>부스터 오픈 · 덱 편성 · 공격/수비/스펠/트랩 전투 엔진 — Expo 기반 심플 카드 배틀 RPG</p>
+<p>
+<img src="https://img.shields.io/badge/Expo-000020?style=flat-square&logo=expo&logoColor=white" />
+<img src="https://img.shields.io/badge/React_Native-61DAFB?style=flat-square&logo=react&logoColor=black" />
+<img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black" />
+</p>
+<a href="https://cardrpg.vercel.app"><img src="https://img.shields.io/badge/▶_LIVE_DEMO-f59e0b?style=for-the-badge&labelColor=1a1a2e" alt="Live" /></a>
+</td>
+</tr>
+</table>
+
+</div>
+
+---
+
+## 📌 Other Projects
 
 <div align="center">
 
 | | Project | Description | Tech |
 |:-:|---------|-------------|------|
-| 🌏 | [**KLS Connect**](https://github.com/gogoonbuntu/kls-connect) | 한국리더십학교 동문 네트워크 플랫폼 (Web + Mobile) | Next.js · Expo · Firebase |
-| 🎨 | [**3D Gallery**](https://github.com/gogoonbuntu/3Dgallery) | 몰입감 있는 3D 가상 전시회 플랫폼 | TypeScript · Three.js |
 | 💰 | [**Moneygemnet**](https://github.com/MoneygementTeam/front) | 과거 경제 위기를 모험하며 금융 지식을 배우는 플랫폼 | JavaScript |
 | 🎤 | [**GDG UX Presentation**](https://github.com/gogoonbuntu/GDG-UX-Design-Presentation) | GDG 행사 UX 디자인 발표 자료 | JavaScript |
 
