@@ -1,6 +1,13 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=Gogoonbuntu&fontSize=60&fontAlignY=36&desc=✌%20Positive%20Recognize%20Positive%20☆&descSize=16&descAlignY=56&animation=twinkling" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=&fontSize=60&fontAlignY=36" width="100%" />
 
 <div align="center">
+
+<!-- 3D ROTATING EXHIBITION BANNER -->
+<a href="#-my-services--live--deployed">
+<img src="screenshots/showcase/carousel-3d.svg" width="100%" alt="3D Service Exhibition - Rotating Carousel" />
+</a>
+
+<br/>
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&random=false&width=500&lines=Full-Stack+Developer+%F0%9F%9A%80;React+%7C+Next.js+%7C+Firebase+%F0%9F%94%A5;Building+Communities+%F0%9F%8C%8F;Always+Learning+%F0%9F%93%9A)](https://git.io/typing-svg)
 
