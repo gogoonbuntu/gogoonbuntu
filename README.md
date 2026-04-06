@@ -3,7 +3,9 @@
 <div align="center">
 
 <!-- 3D ROTATING EXHIBITION BANNER -->
+<a href="https://github.com/gogoonbuntu/gogoonbuntu#-my-services--live--deployed">
 <img src="screenshots/showcase/carousel-3d.svg" width="100%" alt="3D Service Exhibition - Rotating Carousel" />
+</a>
 
 <p>
 <a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/3dgallery"><img src="https://img.shields.io/badge/🎨_온전_Onliex-667eea?style=for-the-badge&labelColor=0d1117" alt="3D Gallery" /></a>
