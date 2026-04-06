@@ -3,9 +3,8 @@
 <div align="center">
 
 <!-- 3D ROTATING EXHIBITION BANNER -->
-<a href="#-my-services--live--deployed">
 <img src="screenshots/showcase/carousel-3d.svg" width="100%" alt="3D Service Exhibition - Rotating Carousel" />
-</a>
+<sub>🖱️ <a href="screenshots/showcase/carousel-3d.svg">인터랙티브 버전 열기</a> — 카드를 클릭하면 각 프로젝트 README로 이동합니다</sub>
 
 <br/>
 

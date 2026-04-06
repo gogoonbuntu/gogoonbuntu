@@ -110,6 +110,7 @@ cat > "$OUT" << 'SVGEOF'
     .c1{animation:o1 25s linear infinite}.c2{animation:o2 25s linear infinite}.c3{animation:o3 25s linear infinite}.c4{animation:o4 25s linear infinite}.c5{animation:o5 25s linear infinite}
     .tf{animation:ft 4s ease-in-out infinite}.st{animation:tw 3s ease-in-out infinite}.bt{animation:bl 3s linear infinite}.rg{animation:pr 25s linear infinite}.gp{animation:gp 4s ease-in-out infinite}
     .live{animation:pulse 2s ease-in-out infinite}
+    .c1,.c2,.c3,.c4,.c5{cursor:pointer}
   </style>
   <rect width="900" height="520" fill="url(#bg)" rx="12"/>
   <!-- Grid -->
@@ -130,6 +131,7 @@ SVGEOF
 # Card 3: KLS Connect (back)
 cat >> "$OUT" << CARD3
   <!-- Card 3: KLS Connect -->
+  <a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/kls-connect" target="_blank">
   <g class="c3" filter="url(#ds)"><g transform="translate(-100,-135)">
     <g clip-path="url(#cardClip)">
       <image href="data:image/jpeg;base64,${B64_KLS}" x="0" y="0" width="200" height="250" preserveAspectRatio="xMidYMid slice"/>
@@ -146,11 +148,13 @@ cat >> "$OUT" << CARD3
       <text x="100" y="237" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="8.5" fill="#38ef7d" letter-spacing="1" opacity=".8">WEB · iOS · ANDROID</text>
     </g>
   </g></g>
+  </a>
 CARD3
 
 # Card 4: WhaleFriend (back-left)
 cat >> "$OUT" << CARD4
   <!-- Card 4: WhaleFriend -->
+  <a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/whalefriend" target="_blank">
   <g class="c4" filter="url(#ds)"><g transform="translate(-100,-135)">
     <g clip-path="url(#cardClip)">
       <image href="data:image/jpeg;base64,${B64_WHALE}" x="0" y="0" width="200" height="250" preserveAspectRatio="xMidYMid slice"/>
@@ -165,11 +169,13 @@ cat >> "$OUT" << CARD4
       <text x="100" y="237" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="8.5" fill="#6dd5ed" letter-spacing="1" opacity=".8">3D UNDERWATER · GEMINI AI</text>
     </g>
   </g></g>
+  </a>
 CARD4
 
 # Card 2: Chiwi (right)
 cat >> "$OUT" << CARD2
   <!-- Card 2: Chiwi Defense -->
+  <a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/chiwi-pixel-rpg" target="_blank">
   <g class="c2" filter="url(#ds)"><g transform="translate(-100,-135)">
     <g clip-path="url(#cardClip)">
       <image href="data:image/jpeg;base64,${B64_CHIWI}" x="0" y="0" width="200" height="250" preserveAspectRatio="xMidYMid slice"/>
@@ -184,11 +190,13 @@ cat >> "$OUT" << CARD2
       <text x="100" y="237" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="8.5" fill="#f5af19" letter-spacing="1" opacity=".8">341 BALANCE TESTS ✓</text>
     </g>
   </g></g>
+  </a>
 CARD2
 
 # Card 5: Card RPG (left)
 cat >> "$OUT" << CARD5
   <!-- Card 5: Card RPG Arena -->
+  <a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/cardrpg" target="_blank">
   <g class="c5" filter="url(#ds)"><g transform="translate(-100,-135)">
     <g clip-path="url(#cardClip)">
       <image href="data:image/jpeg;base64,${B64_CARD}" x="0" y="0" width="200" height="250" preserveAspectRatio="xMidYMid slice"/>
@@ -203,11 +211,13 @@ cat >> "$OUT" << CARD5
       <text x="100" y="237" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="8.5" fill="#f5af19" letter-spacing="1" opacity=".8">ATK · DEF · SPELL · TRAP</text>
     </g>
   </g></g>
+  </a>
 CARD5
 
 # Card 1: 3D Gallery (front center — hero card)
 cat >> "$OUT" << CARD1
   <!-- Card 1: 3D Gallery (front) -->
+  <a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/3dgallery" target="_blank">
   <g class="c1" filter="url(#ds)"><g transform="translate(-100,-135)">
     <g clip-path="url(#cardClip)">
       <image href="data:image/jpeg;base64,${B64_GALLERY}" x="0" y="0" width="200" height="250" preserveAspectRatio="xMidYMid slice"/>
@@ -222,6 +232,7 @@ cat >> "$OUT" << CARD1
       <text x="100" y="237" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="8.5" fill="#a78bfa" letter-spacing="1" opacity=".8">IMMERSIVE 3D · MULTIPLAYER</text>
     </g>
   </g></g>
+  </a>
 CARD1
 
 # Status bar and corners
