@@ -3,10 +3,16 @@
 <div align="center">
 
 <!-- 3D ROTATING EXHIBITION BANNER -->
-<a href="https://github.com/gogoonbuntu/gogoonbuntu#-my-services--live--deployed">
 <img src="screenshots/showcase/carousel-3d.svg" width="100%" alt="3D Service Exhibition - Rotating Carousel" />
-</a>
-<sub>🖱️ <a href="screenshots/showcase/carousel-3d.svg">인터랙티브 버전 열기</a> — 카드를 클릭하면 각 프로젝트 README로 이동합니다</sub>
+
+<p>
+<a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/3dgallery"><img src="https://img.shields.io/badge/🎨_온전_Onliex-667eea?style=for-the-badge&labelColor=0d1117" alt="3D Gallery" /></a>
+<a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/chiwi-pixel-rpg"><img src="https://img.shields.io/badge/⚔️_Chiwi_Defense-f12711?style=for-the-badge&labelColor=0d1117" alt="Chiwi" /></a>
+<a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/kls-connect"><img src="https://img.shields.io/badge/🌏_KLS_Connect-38ef7d?style=for-the-badge&labelColor=0d1117" alt="KLS Connect" /></a>
+<a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/whalefriend"><img src="https://img.shields.io/badge/🐋_WhaleFriend-6dd5ed?style=for-the-badge&labelColor=0d1117" alt="WhaleFriend" /></a>
+<a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/cardrpg"><img src="https://img.shields.io/badge/🃏_Card_RPG-f5af19?style=for-the-badge&labelColor=0d1117" alt="Card RPG" /></a>
+</p>
+<sub>👆 각 프로젝트 README로 바로 이동 · 🖱️ <a href="screenshots/showcase/carousel-3d.svg">인터랙티브 버전 열기</a>에서는 카드 직접 클릭 가능</sub>
 
 <br/>
 
