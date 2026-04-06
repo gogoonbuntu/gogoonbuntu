@@ -3,7 +3,7 @@
 <div align="center">
 
 <!-- 3D ROTATING EXHIBITION BANNER -->
-<a href="https://github.com/gogoonbuntu/gogoonbuntu#-my-services--live--deployed">
+<a href="https://github.com/gogoonbuntu#-my-services--live--deployed">
 <img src="screenshots/showcase/carousel-3d.svg" width="100%" alt="3D Service Exhibition - Rotating Carousel" />
 </a>
 
@@ -14,7 +14,6 @@
 <a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/whalefriend"><img src="https://img.shields.io/badge/🐋_WhaleFriend-6dd5ed?style=for-the-badge&labelColor=0d1117" alt="WhaleFriend" /></a>
 <a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/cardrpg"><img src="https://img.shields.io/badge/🃏_Card_RPG-f5af19?style=for-the-badge&labelColor=0d1117" alt="Card RPG" /></a>
 </p>
-<sub>👆 각 프로젝트 README로 바로 이동 · 🖱️ <a href="screenshots/showcase/carousel-3d.svg">인터랙티브 버전 열기</a>에서는 카드 직접 클릭 가능</sub>
 
 <br/>
 
