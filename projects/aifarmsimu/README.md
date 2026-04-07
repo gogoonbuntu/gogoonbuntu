@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <a href="http://localhost:5173"><img src="https://img.shields.io/badge/🌐_Demo-localhost:5173-2d6a4f?style=for-the-badge&labelColor=1a1a2e" alt="Demo" /></a>
+  <a href="https://choosukkum.vercel.app"><img src="https://img.shields.io/badge/🌐_Live_Demo-choosukkum.vercel.app-2d6a4f?style=for-the-badge&labelColor=1a1a2e" alt="Live Demo" /></a>
   <br/><br/>
   <img src="https://img.shields.io/badge/JavaScript-ES2024-F7DF1E?style=flat-square&logo=javascript&logoColor=black" />
   <img src="https://img.shields.io/badge/Three.js-r183-000000?style=flat-square&logo=three.js&logoColor=white" />

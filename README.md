@@ -167,7 +167,7 @@ past_highlights:
 <a href="https://cardrpg.vercel.app"><img src="https://img.shields.io/badge/▶_LIVE_DEMO-f59e0b?style=for-the-badge&labelColor=1a1a2e" alt="Live" /></a>
 </td>
 <td align="center" width="50%">
-<a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/aifarmsimu">
+<a href="https://choosukkum.vercel.app">
 <img src="screenshots/showcase/aifarmsimu.png" width="100%" alt="AI Farm Simulation" />
 </a>
 <br/>
@@ -179,7 +179,7 @@ past_highlights:
 <img src="https://img.shields.io/badge/Three.js-000?style=flat-square&logo=threedotjs&logoColor=white" />
 <img src="https://img.shields.io/badge/DSSAT-2d6a4f?style=flat-square" />
 </p>
-<a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/aifarmsimu"><img src="https://img.shields.io/badge/▶_EXPLORE-2d6a4f?style=for-the-badge&labelColor=1a1a2e" alt="Explore" /></a>
+<a href="https://choosukkum.vercel.app"><img src="https://img.shields.io/badge/▶_LIVE_DEMO-2d6a4f?style=for-the-badge&labelColor=1a1a2e" alt="Live" /></a>
 </td>
 </tr>
 </table>
