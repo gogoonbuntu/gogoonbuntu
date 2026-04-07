@@ -13,6 +13,7 @@
 <a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/kls-connect"><img src="https://img.shields.io/badge/🌏_KLS_Connect-38ef7d?style=for-the-badge&labelColor=0d1117" alt="KLS Connect" /></a>
 <a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/whalefriend"><img src="https://img.shields.io/badge/🐋_WhaleFriend-6dd5ed?style=for-the-badge&labelColor=0d1117" alt="WhaleFriend" /></a>
 <a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/cardrpg"><img src="https://img.shields.io/badge/🃏_Card_RPG-f5af19?style=for-the-badge&labelColor=0d1117" alt="Card RPG" /></a>
+<a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/aifarmsimu"><img src="https://img.shields.io/badge/🌾_AI_Farm_Sim-2d6a4f?style=for-the-badge&labelColor=0d1117" alt="AI Farm Simulation" /></a>
 </p>
 
 <br/>
@@ -36,6 +37,7 @@ currently_building:
   - KLS Connect — 한국리더십학교 동문 네트워크 플랫폼
   - WhaleFriend — 향유고래 소통 시뮬레이션 웹앱
   - Card RPG Arena — 카드 배틀 RPG
+  - AI Farm Simulation — 과학적 작물 성장 모델 기반 가상 농업 시뮬레이터
 past_highlights:
   - GDG 행사 UX 디자인 발표
   - Moneygemnet — 금융 교육 게이미피케이션 플랫폼
@@ -149,9 +151,9 @@ past_highlights:
 </td>
 </tr>
 <tr>
-<td align="center" colspan="2">
+<td align="center" width="50%">
 <a href="https://cardrpg.vercel.app">
-<img src="screenshots/showcase/cardrpg.png" width="50%" alt="Card RPG Arena" />
+<img src="screenshots/showcase/cardrpg.png" width="100%" alt="Card RPG Arena" />
 </a>
 <br/>
 <h3>🃏 Card RPG Arena</h3>
@@ -163,6 +165,21 @@ past_highlights:
 <img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black" />
 </p>
 <a href="https://cardrpg.vercel.app"><img src="https://img.shields.io/badge/▶_LIVE_DEMO-f59e0b?style=for-the-badge&labelColor=1a1a2e" alt="Live" /></a>
+</td>
+<td align="center" width="50%">
+<a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/aifarmsimu">
+<img src="screenshots/showcase/aifarmsimu.png" width="100%" alt="AI Farm Simulation" />
+</a>
+<br/>
+<h3>🌾 AI 농장 시뮬레이션</h3>
+<p><em>「실제 농업 과학 데이터로 구동되는 가상 농장」</em></p>
+<p>DSSAT/APSIM 기반 GDD 성장 모델 · 6개 기후권역 × 8종 작물 · 확률적 기상 엔진 · Three.js 3D 농장 시각화</p>
+<p>
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" />
+<img src="https://img.shields.io/badge/Three.js-000?style=flat-square&logo=threedotjs&logoColor=white" />
+<img src="https://img.shields.io/badge/DSSAT-2d6a4f?style=flat-square" />
+</p>
+<a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/aifarmsimu"><img src="https://img.shields.io/badge/▶_EXPLORE-2d6a4f?style=for-the-badge&labelColor=1a1a2e" alt="Explore" /></a>
 </td>
 </tr>
 </table>
