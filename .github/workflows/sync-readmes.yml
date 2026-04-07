@@ -66,6 +66,16 @@ jobs:
           sparse-checkout: |
             README.md
 
+      - name: Sync AI Farm Simulation README
+        uses: actions/checkout@v4
+        with:
+          repository: gogoonbuntu/aifarmsimu
+          token: ${{ secrets.PRIVATE_REPO_PAT }}
+          path: _tmp/aifarmsimu
+          sparse-checkout: |
+            README.md
+            screenshots
+
       - name: Copy READMEs and screenshots to projects/
         run: |
           # 3D Gallery
@@ -88,6 +98,10 @@ jobs:
 
           # Card RPG
           cp _tmp/cardrpg/README.md projects/cardrpg/README.md
+
+          # AI Farm Simulation
+          cp _tmp/aifarmsimu/README.md projects/aifarmsimu/README.md
+          rsync -a --delete --include='*.png' --include='*.jpg' --include='*/' --exclude='*' _tmp/aifarmsimu/screenshots/ projects/aifarmsimu/screenshots/
 
           # Cleanup
           rm -rf _tmp

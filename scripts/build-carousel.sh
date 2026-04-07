@@ -1,5 +1,6 @@
 #!/bin/bash
 # Build the 3D carousel SVG with full-bleed screenshot cards + overlay text
+# 6 cards on an elliptical orbit (cx=450, cy=310, rx=280, ry=45)
 
 THUMBS="screenshots/showcase/thumbs"
 OUT="screenshots/showcase/carousel-3d.svg"
@@ -9,6 +10,7 @@ B64_CHIWI=$(cat "$THUMBS/chiwi.b64")
 B64_KLS=$(cat "$THUMBS/klsconnect.b64")
 B64_WHALE=$(cat "$THUMBS/whalefriend.b64")
 B64_CARD=$(cat "$THUMBS/cardrpg.b64")
+B64_FARM=$(cat "$THUMBS/aifarmsimu.b64")
 
 cat > "$OUT" << 'SVGEOF'
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 900 520" width="900" height="520">
@@ -22,6 +24,7 @@ cat > "$OUT" << 'SVGEOF'
     <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#11998e"/><stop offset="100%" stop-color="#38ef7d"/></linearGradient>
     <linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2193b0"/><stop offset="100%" stop-color="#6dd5ed"/></linearGradient>
     <linearGradient id="g5" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#c59b6d"/><stop offset="100%" stop-color="#f5af19"/></linearGradient>
+    <linearGradient id="g6" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1b5e20"/><stop offset="100%" stop-color="#4caf50"/></linearGradient>
     <!-- Bottom fade overlay for text readability -->
     <linearGradient id="fade" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#000" stop-opacity="0"/><stop offset="40%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity=".88"/></linearGradient>
     <!-- Top subtle vignette -->
@@ -35,71 +38,120 @@ cat > "$OUT" << 'SVGEOF'
   </defs>
   <style>
     /* Ellipse orbit: cx=450, cy=310, rx=280, ry=45 */
+    /* 6 cards, each offset by 60° (=16.67% of cycle) */
     /* Card: 200x250, anchor translate(-100,-135) */
+    /* Positions for 12 stops (every 30° = 8.33%):
+       0°   (front):  450,355  scale=1.00  opacity=1.00
+       30°  :         693,349  scale=.95   opacity=.90
+       60°  :         693,332  scale=.82   opacity=.65     -- TYPO FIX: use measured positions
+       90°  (right):  730,310  scale=.65   opacity=.35
+       120° :         693,288  scale=.50   opacity=.18
+       150° :         570,272  scale=.43   opacity=.08
+       180° (back):   450,265  scale=.40   opacity=.05
+       210° :         330,272  scale=.43   opacity=.08
+       240° :         207,288  scale=.50   opacity=.18
+       270° (left):   170,310  scale=.65   opacity=.35
+       300° :         207,332  scale=.82   opacity=.65
+       330° :         330,349  scale=.95   opacity=.90
+    */
+    /* Recalculated 6 positions at 0°,60°,120°,180°,240°,300° */
+    /* p0=0°:   450,355 s1.00 o1.00  (front center) */
+    /* p1=60°:  710,332 s.78  o.60   (front-right) */
+    /* p2=120°: 710,288 s.50  o.18   (back-right) */
+    /* p3=180°: 450,265 s.40  o.05   (back center) */
+    /* p4=240°: 190,288 s.50  o.18   (back-left) */
+    /* p5=300°: 190,332 s.78  o.60   (front-left) */
+
+    /* Smooth 12-stop interpolation for each card position */
     @keyframes o1{
-      0%  {transform:translate(450px,355px) scale(1);opacity:1}
-      10% {transform:translate(614px,346px) scale(.93);opacity:.85}
-      20% {transform:translate(715px,324px) scale(.78);opacity:.60}
-      30% {transform:translate(715px,296px) scale(.60);opacity:.32}
-      40% {transform:translate(614px,274px) scale(.48);opacity:.15}
-      50% {transform:translate(450px,265px) scale(.43);opacity:.06}
-      60% {transform:translate(286px,274px) scale(.48);opacity:.15}
-      70% {transform:translate(185px,296px) scale(.60);opacity:.32}
-      80% {transform:translate(185px,324px) scale(.78);opacity:.60}
-      90% {transform:translate(286px,346px) scale(.93);opacity:.85}
-      100%{transform:translate(450px,355px) scale(1);opacity:1}
+      0%     {transform:translate(450px,355px) scale(1);opacity:1}
+      8.33%  {transform:translate(590px,349px) scale(.93);opacity:.85}
+      16.67% {transform:translate(710px,332px) scale(.78);opacity:.60}
+      25%    {transform:translate(730px,310px) scale(.65);opacity:.35}
+      33.33% {transform:translate(710px,288px) scale(.50);opacity:.18}
+      41.67% {transform:translate(580px,272px) scale(.43);opacity:.08}
+      50%    {transform:translate(450px,265px) scale(.40);opacity:.05}
+      58.33% {transform:translate(320px,272px) scale(.43);opacity:.08}
+      66.67% {transform:translate(190px,288px) scale(.50);opacity:.18}
+      75%    {transform:translate(170px,310px) scale(.65);opacity:.35}
+      83.33% {transform:translate(190px,332px) scale(.78);opacity:.60}
+      91.67% {transform:translate(310px,349px) scale(.93);opacity:.85}
+      100%   {transform:translate(450px,355px) scale(1);opacity:1}
     }
     @keyframes o2{
-      0%  {transform:translate(715px,324px) scale(.78);opacity:.60}
-      10% {transform:translate(715px,296px) scale(.60);opacity:.32}
-      20% {transform:translate(614px,274px) scale(.48);opacity:.15}
-      30% {transform:translate(450px,265px) scale(.43);opacity:.06}
-      40% {transform:translate(286px,274px) scale(.48);opacity:.15}
-      50% {transform:translate(185px,296px) scale(.60);opacity:.32}
-      60% {transform:translate(185px,324px) scale(.78);opacity:.60}
-      70% {transform:translate(286px,346px) scale(.93);opacity:.85}
-      80% {transform:translate(450px,355px) scale(1);opacity:1}
-      90% {transform:translate(614px,346px) scale(.93);opacity:.85}
-      100%{transform:translate(715px,324px) scale(.78);opacity:.60}
+      0%     {transform:translate(710px,332px) scale(.78);opacity:.60}
+      8.33%  {transform:translate(730px,310px) scale(.65);opacity:.35}
+      16.67% {transform:translate(710px,288px) scale(.50);opacity:.18}
+      25%    {transform:translate(580px,272px) scale(.43);opacity:.08}
+      33.33% {transform:translate(450px,265px) scale(.40);opacity:.05}
+      41.67% {transform:translate(320px,272px) scale(.43);opacity:.08}
+      50%    {transform:translate(190px,288px) scale(.50);opacity:.18}
+      58.33% {transform:translate(170px,310px) scale(.65);opacity:.35}
+      66.67% {transform:translate(190px,332px) scale(.78);opacity:.60}
+      75%    {transform:translate(310px,349px) scale(.93);opacity:.85}
+      83.33% {transform:translate(450px,355px) scale(1);opacity:1}
+      91.67% {transform:translate(590px,349px) scale(.93);opacity:.85}
+      100%   {transform:translate(710px,332px) scale(.78);opacity:.60}
     }
     @keyframes o3{
-      0%  {transform:translate(614px,274px) scale(.48);opacity:.15}
-      10% {transform:translate(450px,265px) scale(.43);opacity:.06}
-      20% {transform:translate(286px,274px) scale(.48);opacity:.15}
-      30% {transform:translate(185px,296px) scale(.60);opacity:.32}
-      40% {transform:translate(185px,324px) scale(.78);opacity:.60}
-      50% {transform:translate(286px,346px) scale(.93);opacity:.85}
-      60% {transform:translate(450px,355px) scale(1);opacity:1}
-      70% {transform:translate(614px,346px) scale(.93);opacity:.85}
-      80% {transform:translate(715px,324px) scale(.78);opacity:.60}
-      90% {transform:translate(715px,296px) scale(.60);opacity:.32}
-      100%{transform:translate(614px,274px) scale(.48);opacity:.15}
+      0%     {transform:translate(710px,288px) scale(.50);opacity:.18}
+      8.33%  {transform:translate(580px,272px) scale(.43);opacity:.08}
+      16.67% {transform:translate(450px,265px) scale(.40);opacity:.05}
+      25%    {transform:translate(320px,272px) scale(.43);opacity:.08}
+      33.33% {transform:translate(190px,288px) scale(.50);opacity:.18}
+      41.67% {transform:translate(170px,310px) scale(.65);opacity:.35}
+      50%    {transform:translate(190px,332px) scale(.78);opacity:.60}
+      58.33% {transform:translate(310px,349px) scale(.93);opacity:.85}
+      66.67% {transform:translate(450px,355px) scale(1);opacity:1}
+      75%    {transform:translate(590px,349px) scale(.93);opacity:.85}
+      83.33% {transform:translate(710px,332px) scale(.78);opacity:.60}
+      91.67% {transform:translate(730px,310px) scale(.65);opacity:.35}
+      100%   {transform:translate(710px,288px) scale(.50);opacity:.18}
     }
     @keyframes o4{
-      0%  {transform:translate(286px,274px) scale(.48);opacity:.15}
-      10% {transform:translate(185px,296px) scale(.60);opacity:.32}
-      20% {transform:translate(185px,324px) scale(.78);opacity:.60}
-      30% {transform:translate(286px,346px) scale(.93);opacity:.85}
-      40% {transform:translate(450px,355px) scale(1);opacity:1}
-      50% {transform:translate(614px,346px) scale(.93);opacity:.85}
-      60% {transform:translate(715px,324px) scale(.78);opacity:.60}
-      70% {transform:translate(715px,296px) scale(.60);opacity:.32}
-      80% {transform:translate(614px,274px) scale(.48);opacity:.15}
-      90% {transform:translate(450px,265px) scale(.43);opacity:.06}
-      100%{transform:translate(286px,274px) scale(.48);opacity:.15}
+      0%     {transform:translate(450px,265px) scale(.40);opacity:.05}
+      8.33%  {transform:translate(320px,272px) scale(.43);opacity:.08}
+      16.67% {transform:translate(190px,288px) scale(.50);opacity:.18}
+      25%    {transform:translate(170px,310px) scale(.65);opacity:.35}
+      33.33% {transform:translate(190px,332px) scale(.78);opacity:.60}
+      41.67% {transform:translate(310px,349px) scale(.93);opacity:.85}
+      50%    {transform:translate(450px,355px) scale(1);opacity:1}
+      58.33% {transform:translate(590px,349px) scale(.93);opacity:.85}
+      66.67% {transform:translate(710px,332px) scale(.78);opacity:.60}
+      75%    {transform:translate(730px,310px) scale(.65);opacity:.35}
+      83.33% {transform:translate(710px,288px) scale(.50);opacity:.18}
+      91.67% {transform:translate(580px,272px) scale(.43);opacity:.08}
+      100%   {transform:translate(450px,265px) scale(.40);opacity:.05}
     }
     @keyframes o5{
-      0%  {transform:translate(185px,324px) scale(.78);opacity:.60}
-      10% {transform:translate(286px,346px) scale(.93);opacity:.85}
-      20% {transform:translate(450px,355px) scale(1);opacity:1}
-      30% {transform:translate(614px,346px) scale(.93);opacity:.85}
-      40% {transform:translate(715px,324px) scale(.78);opacity:.60}
-      50% {transform:translate(715px,296px) scale(.60);opacity:.32}
-      60% {transform:translate(614px,274px) scale(.48);opacity:.15}
-      70% {transform:translate(450px,265px) scale(.43);opacity:.06}
-      80% {transform:translate(286px,274px) scale(.48);opacity:.15}
-      90% {transform:translate(185px,296px) scale(.60);opacity:.32}
-      100%{transform:translate(185px,324px) scale(.78);opacity:.60}
+      0%     {transform:translate(190px,288px) scale(.50);opacity:.18}
+      8.33%  {transform:translate(170px,310px) scale(.65);opacity:.35}
+      16.67% {transform:translate(190px,332px) scale(.78);opacity:.60}
+      25%    {transform:translate(310px,349px) scale(.93);opacity:.85}
+      33.33% {transform:translate(450px,355px) scale(1);opacity:1}
+      41.67% {transform:translate(590px,349px) scale(.93);opacity:.85}
+      50%    {transform:translate(710px,332px) scale(.78);opacity:.60}
+      58.33% {transform:translate(730px,310px) scale(.65);opacity:.35}
+      66.67% {transform:translate(710px,288px) scale(.50);opacity:.18}
+      75%    {transform:translate(580px,272px) scale(.43);opacity:.08}
+      83.33% {transform:translate(450px,265px) scale(.40);opacity:.05}
+      91.67% {transform:translate(320px,272px) scale(.43);opacity:.08}
+      100%   {transform:translate(190px,288px) scale(.50);opacity:.18}
+    }
+    @keyframes o6{
+      0%     {transform:translate(190px,332px) scale(.78);opacity:.60}
+      8.33%  {transform:translate(310px,349px) scale(.93);opacity:.85}
+      16.67% {transform:translate(450px,355px) scale(1);opacity:1}
+      25%    {transform:translate(590px,349px) scale(.93);opacity:.85}
+      33.33% {transform:translate(710px,332px) scale(.78);opacity:.60}
+      41.67% {transform:translate(730px,310px) scale(.65);opacity:.35}
+      50%    {transform:translate(710px,288px) scale(.50);opacity:.18}
+      58.33% {transform:translate(580px,272px) scale(.43);opacity:.08}
+      66.67% {transform:translate(450px,265px) scale(.40);opacity:.05}
+      75%    {transform:translate(320px,272px) scale(.43);opacity:.08}
+      83.33% {transform:translate(190px,288px) scale(.50);opacity:.18}
+      91.67% {transform:translate(170px,310px) scale(.65);opacity:.35}
+      100%   {transform:translate(190px,332px) scale(.78);opacity:.60}
     }
     @keyframes ft{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
     @keyframes tw{0%,100%{opacity:.15}50%{opacity:.9}}
@@ -107,10 +159,10 @@ cat > "$OUT" << 'SVGEOF'
     @keyframes pr{0%{stroke-dashoffset:0}100%{stroke-dashoffset:-1200}}
     @keyframes gp{0%,100%{opacity:.15}50%{opacity:.35}}
     @keyframes pulse{0%,100%{opacity:.6}50%{opacity:1}}
-    .c1{animation:o1 25s linear infinite}.c2{animation:o2 25s linear infinite}.c3{animation:o3 25s linear infinite}.c4{animation:o4 25s linear infinite}.c5{animation:o5 25s linear infinite}
-    .tf{animation:ft 4s ease-in-out infinite}.st{animation:tw 3s ease-in-out infinite}.bt{animation:bl 3s linear infinite}.rg{animation:pr 25s linear infinite}.gp{animation:gp 4s ease-in-out infinite}
+    .c1{animation:o1 30s linear infinite}.c2{animation:o2 30s linear infinite}.c3{animation:o3 30s linear infinite}.c4{animation:o4 30s linear infinite}.c5{animation:o5 30s linear infinite}.c6{animation:o6 30s linear infinite}
+    .tf{animation:ft 4s ease-in-out infinite}.st{animation:tw 3s ease-in-out infinite}.bt{animation:bl 3s linear infinite}.rg{animation:pr 30s linear infinite}.gp{animation:gp 4s ease-in-out infinite}
     .live{animation:pulse 2s ease-in-out infinite}
-    .c1,.c2,.c3,.c4,.c5{cursor:pointer}
+    .c1,.c2,.c3,.c4,.c5,.c6{cursor:pointer}
   </style>
   <rect width="900" height="520" fill="url(#bg)" rx="12"/>
   <!-- Grid -->
@@ -118,7 +170,7 @@ cat > "$OUT" << 'SVGEOF'
   <!-- Stars -->
   <g filter="url(#sg)"><circle class="st" cx="45" cy="35" r="1.2" fill="#58a6ff" style="animation-delay:0s"/><circle class="st" cx="130" cy="75" r=".8" fill="#fff" style="animation-delay:.5s"/><circle class="st" cx="240" cy="28" r="1" fill="#58a6ff" style="animation-delay:1s"/><circle class="st" cx="370" cy="55" r=".6" fill="#c9d1d9" style="animation-delay:1.5s"/><circle class="st" cx="510" cy="22" r="1.1" fill="#58a6ff" style="animation-delay:.3s"/><circle class="st" cx="640" cy="48" r=".9" fill="#fff" style="animation-delay:.8s"/><circle class="st" cx="740" cy="32" r="1.3" fill="#58a6ff" style="animation-delay:1.2s"/><circle class="st" cx="825" cy="65" r=".7" fill="#c9d1d9" style="animation-delay:2s"/><circle class="st" cx="95" cy="115" r=".5" fill="#fff" style="animation-delay:2.5s"/><circle class="st" cx="790" cy="120" r=".8" fill="#58a6ff" style="animation-delay:1.8s"/><circle class="st" cx="560" cy="105" r=".5" fill="#c9d1d9" style="animation-delay:.9s"/><circle class="st" cx="855" cy="155" r=".6" fill="#fff" style="animation-delay:1.6s"/></g>
   <!-- Title -->
-  <g class="tf"><text x="450" y="48" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="11" fill="#58a6ff" letter-spacing="6" opacity=".6">✦  P O R T F O L I O   E X H I B I T I O N  ✦</text><text x="450" y="82" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="30" fill="#e6edf3" font-weight="700" letter-spacing="1">Gogoonbuntu's Service Gallery</text><text x="450" y="106" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#8b949e" letter-spacing="4">5 LIVE SERVICES — BUILT FROM SCRATCH</text></g>
+  <g class="tf"><text x="450" y="48" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="11" fill="#58a6ff" letter-spacing="6" opacity=".6">✦  P O R T F O L I O   E X H I B I T I O N  ✦</text><text x="450" y="82" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="30" fill="#e6edf3" font-weight="700" letter-spacing="1">Gogoonbuntu's Service Gallery</text><text x="450" y="106" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="12" fill="#8b949e" letter-spacing="4">6 LIVE SERVICES — BUILT FROM SCRATCH</text></g>
   <!-- Platform -->
   <ellipse cx="450" cy="420" rx="320" ry="50" fill="url(#fl)" opacity=".5"/>
   <ellipse class="gp" cx="450" cy="420" rx="290" ry="42" fill="none" stroke="#58a6ff" stroke-width=".5" opacity=".15"/>
@@ -127,33 +179,12 @@ cat > "$OUT" << 'SVGEOF'
   <ellipse cx="450" cy="410" rx="100" ry="20" fill="url(#sp)"/>
 SVGEOF
 
-# --- CARD TEMPLATE: full-bleed screenshot + gradient overlay + text ---
-# Card 3: KLS Connect (back)
-cat >> "$OUT" << CARD3
-  <!-- Card 3: KLS Connect -->
-  <a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/kls-connect" target="_blank">
-  <g class="c3" filter="url(#ds)"><g transform="translate(-100,-135)">
-    <g clip-path="url(#cardClip)">
-      <image href="data:image/jpeg;base64,${B64_KLS}" x="0" y="0" width="200" height="250" preserveAspectRatio="xMidYMid slice"/>
-      <rect width="200" height="250" fill="url(#fade)"/>
-      <rect width="200" height="250" fill="url(#topFade)"/>
-    </g>
-    <rect width="200" height="250" rx="10" fill="none" stroke="url(#g3)" stroke-width="1.5"/>
-    <!-- Live dot -->
-    <circle cx="183" cy="14" r="3.5" fill="#3fb950"/><circle class="live" cx="183" cy="14" r="6" fill="none" stroke="#3fb950" stroke-width=".7"/>
-    <!-- Overlay text -->
-    <g filter="url(#txtSh)">
-      <text x="100" y="195" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="15" fill="#fff" font-weight="700">KLS Connect</text>
-      <text x="100" y="213" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="9" fill="#c9d1d9" opacity=".9">동문 1,000+ 연결 · AI 피드 · 11종 미니게임</text>
-      <text x="100" y="237" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="8.5" fill="#38ef7d" letter-spacing="1" opacity=".8">WEB · iOS · ANDROID</text>
-    </g>
-  </g></g>
-  </a>
-CARD3
+# --- CARDS: rendered back-to-front for proper z-ordering ---
+# Cards at the back of the orbit are rendered first (lowest z-index)
 
-# Card 4: WhaleFriend (back-left)
+# Card 4: back center (starts at 180°) — changes per rotation
 cat >> "$OUT" << CARD4
-  <!-- Card 4: WhaleFriend -->
+  <!-- Card 4: WhaleFriend (back center) -->
   <a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/whalefriend" target="_blank">
   <g class="c4" filter="url(#ds)"><g transform="translate(-100,-135)">
     <g clip-path="url(#cardClip)">
@@ -172,30 +203,30 @@ cat >> "$OUT" << CARD4
   </a>
 CARD4
 
-# Card 2: Chiwi (right)
-cat >> "$OUT" << CARD2
-  <!-- Card 2: Chiwi Defense -->
-  <a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/chiwi-pixel-rpg" target="_blank">
-  <g class="c2" filter="url(#ds)"><g transform="translate(-100,-135)">
+# Card 3: back-right (starts at 120°)
+cat >> "$OUT" << CARD3
+  <!-- Card 3: KLS Connect (back-right) -->
+  <a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/kls-connect" target="_blank">
+  <g class="c3" filter="url(#ds)"><g transform="translate(-100,-135)">
     <g clip-path="url(#cardClip)">
-      <image href="data:image/jpeg;base64,${B64_CHIWI}" x="0" y="0" width="200" height="250" preserveAspectRatio="xMidYMid slice"/>
+      <image href="data:image/jpeg;base64,${B64_KLS}" x="0" y="0" width="200" height="250" preserveAspectRatio="xMidYMid slice"/>
       <rect width="200" height="250" fill="url(#fade)"/>
       <rect width="200" height="250" fill="url(#topFade)"/>
     </g>
-    <rect width="200" height="250" rx="10" fill="none" stroke="url(#g2)" stroke-width="1.5"/>
+    <rect width="200" height="250" rx="10" fill="none" stroke="url(#g3)" stroke-width="1.5"/>
     <circle cx="183" cy="14" r="3.5" fill="#3fb950"/><circle class="live" cx="183" cy="14" r="6" fill="none" stroke="#3fb950" stroke-width=".7"/>
     <g filter="url(#txtSh)">
-      <text x="100" y="195" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="15" fill="#fff" font-weight="700">Chiwi Defense</text>
-      <text x="100" y="213" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="9" fill="#c9d1d9" opacity=".9">25,000줄 Canvas · 5직업 × 18무기 × 10필드</text>
-      <text x="100" y="237" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="8.5" fill="#f5af19" letter-spacing="1" opacity=".8">341 BALANCE TESTS ✓</text>
+      <text x="100" y="195" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="15" fill="#fff" font-weight="700">KLS Connect</text>
+      <text x="100" y="213" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="9" fill="#c9d1d9" opacity=".9">동문 1,000+ 연결 · AI 피드 · 11종 미니게임</text>
+      <text x="100" y="237" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="8.5" fill="#38ef7d" letter-spacing="1" opacity=".8">WEB · iOS · ANDROID</text>
     </g>
   </g></g>
   </a>
-CARD2
+CARD3
 
-# Card 5: Card RPG (left)
+# Card 5: back-left (starts at 240°)
 cat >> "$OUT" << CARD5
-  <!-- Card 5: Card RPG Arena -->
+  <!-- Card 5: Card RPG Arena (back-left) -->
   <a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/cardrpg" target="_blank">
   <g class="c5" filter="url(#ds)"><g transform="translate(-100,-135)">
     <g clip-path="url(#cardClip)">
@@ -214,7 +245,49 @@ cat >> "$OUT" << CARD5
   </a>
 CARD5
 
-# Card 1: 3D Gallery (front center — hero card)
+# Card 2: front-right (starts at 60°)
+cat >> "$OUT" << CARD2
+  <!-- Card 2: Chiwi Defense (front-right) -->
+  <a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/chiwi-pixel-rpg" target="_blank">
+  <g class="c2" filter="url(#ds)"><g transform="translate(-100,-135)">
+    <g clip-path="url(#cardClip)">
+      <image href="data:image/jpeg;base64,${B64_CHIWI}" x="0" y="0" width="200" height="250" preserveAspectRatio="xMidYMid slice"/>
+      <rect width="200" height="250" fill="url(#fade)"/>
+      <rect width="200" height="250" fill="url(#topFade)"/>
+    </g>
+    <rect width="200" height="250" rx="10" fill="none" stroke="url(#g2)" stroke-width="1.5"/>
+    <circle cx="183" cy="14" r="3.5" fill="#3fb950"/><circle class="live" cx="183" cy="14" r="6" fill="none" stroke="#3fb950" stroke-width=".7"/>
+    <g filter="url(#txtSh)">
+      <text x="100" y="195" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="15" fill="#fff" font-weight="700">Chiwi Defense</text>
+      <text x="100" y="213" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="9" fill="#c9d1d9" opacity=".9">25,000줄 Canvas · 5직업 × 18무기 × 10필드</text>
+      <text x="100" y="237" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="8.5" fill="#f5af19" letter-spacing="1" opacity=".8">341 BALANCE TESTS ✓</text>
+    </g>
+  </g></g>
+  </a>
+CARD2
+
+# Card 6: front-left (starts at 300°)
+cat >> "$OUT" << CARD6
+  <!-- Card 6: AI Farm Simulation (front-left) -->
+  <a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/aifarmsimu" target="_blank">
+  <g class="c6" filter="url(#ds)"><g transform="translate(-100,-135)">
+    <g clip-path="url(#cardClip)">
+      <image href="data:image/jpeg;base64,${B64_FARM}" x="0" y="0" width="200" height="250" preserveAspectRatio="xMidYMid slice"/>
+      <rect width="200" height="250" fill="url(#fade)"/>
+      <rect width="200" height="250" fill="url(#topFade)"/>
+    </g>
+    <rect width="200" height="250" rx="10" fill="none" stroke="url(#g6)" stroke-width="1.5"/>
+    <circle cx="183" cy="14" r="3.5" fill="#3fb950"/><circle class="live" cx="183" cy="14" r="6" fill="none" stroke="#3fb950" stroke-width=".7"/>
+    <g filter="url(#txtSh)">
+      <text x="100" y="195" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="15" fill="#fff" font-weight="700">AI Farm Sim</text>
+      <text x="100" y="213" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="9" fill="#c9d1d9" opacity=".9">DSSAT 작물 모델 · 6권역 × 8작물 · 3D 농장</text>
+      <text x="100" y="237" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="8.5" fill="#4caf50" letter-spacing="1" opacity=".8">GDD · WEATHER · AI ROBOTS</text>
+    </g>
+  </g></g>
+  </a>
+CARD6
+
+# Card 1: 3D Gallery (front center — hero card, starts at 0°)
 cat >> "$OUT" << CARD1
   <!-- Card 1: 3D Gallery (front) -->
   <a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/3dgallery" target="_blank">
@@ -244,7 +317,7 @@ cat >> "$OUT" << 'SVGEND'
   <circle cx="400" cy="484" r="3" fill="#3fb950"/>
   <text x="438" y="488" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="10" fill="#8b949e">All Live</text>
   <text x="492" y="488" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="11" fill="#58a6ff">✦</text>
-  <text x="545" y="488" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="10" fill="#8b949e">5 Services</text>
+  <text x="545" y="488" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="10" fill="#8b949e">6 Services</text>
   <!-- Corners -->
   <path d="M20,16 L20,6 Q20,2 24,2 L34,2" fill="none" stroke="#58a6ff" stroke-width="1" opacity=".2"/>
   <path d="M880,16 L880,6 Q880,2 876,2 L866,2" fill="none" stroke="#58a6ff" stroke-width="1" opacity=".2"/>
