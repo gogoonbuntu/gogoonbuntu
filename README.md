@@ -101,6 +101,7 @@ past_highlights:
 <img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black" />
 </p>
 <a href="https://3-dgallery.vercel.app"><img src="https://img.shields.io/badge/▶_LIVE_DEMO-667eea?style=for-the-badge&labelColor=1a1a2e" alt="Live" /></a>
+<a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/3dgallery"><img src="https://img.shields.io/badge/📖_README-8b949e?style=for-the-badge&labelColor=1a1a2e" alt="README" /></a>
 </td>
 <td align="center" width="50%">
 <a href="https://chiwi-pixel-rpg.vercel.app">
@@ -116,6 +117,7 @@ past_highlights:
 <img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white" />
 </p>
 <a href="https://chiwi-pixel-rpg.vercel.app"><img src="https://img.shields.io/badge/▶_PLAY_NOW-ff6b6b?style=for-the-badge&labelColor=1a1a2e" alt="Play" /></a>
+<a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/chiwi-pixel-rpg"><img src="https://img.shields.io/badge/📖_README-8b949e?style=for-the-badge&labelColor=1a1a2e" alt="README" /></a>
 </td>
 </tr>
 <tr>
@@ -133,6 +135,7 @@ past_highlights:
 <img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black" />
 </p>
 <a href="https://v0-klsconnect3.vercel.app"><img src="https://img.shields.io/badge/▶_LIVE_DEMO-10b981?style=for-the-badge&labelColor=1a1a2e" alt="Live" /></a>
+<a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/kls-connect"><img src="https://img.shields.io/badge/📖_README-8b949e?style=for-the-badge&labelColor=1a1a2e" alt="README" /></a>
 </td>
 <td align="center" width="50%">
 <a href="https://whalefriend.vercel.app">
@@ -148,6 +151,7 @@ past_highlights:
 <img src="https://img.shields.io/badge/Web_Audio-FF6B6B?style=flat-square" />
 </p>
 <a href="https://whalefriend.vercel.app"><img src="https://img.shields.io/badge/▶_DIVE_IN-4a9eff?style=for-the-badge&labelColor=1a1a2e" alt="Dive" /></a>
+<a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/whalefriend"><img src="https://img.shields.io/badge/📖_README-8b949e?style=for-the-badge&labelColor=1a1a2e" alt="README" /></a>
 </td>
 </tr>
 <tr>
@@ -165,6 +169,7 @@ past_highlights:
 <img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black" />
 </p>
 <a href="https://cardrpg.vercel.app"><img src="https://img.shields.io/badge/▶_LIVE_DEMO-f59e0b?style=for-the-badge&labelColor=1a1a2e" alt="Live" /></a>
+<a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/cardrpg"><img src="https://img.shields.io/badge/📖_README-8b949e?style=for-the-badge&labelColor=1a1a2e" alt="README" /></a>
 </td>
 <td align="center" width="50%">
 <a href="https://choosukkum.vercel.app">
@@ -180,6 +185,7 @@ past_highlights:
 <img src="https://img.shields.io/badge/DSSAT-2d6a4f?style=flat-square" />
 </p>
 <a href="https://choosukkum.vercel.app"><img src="https://img.shields.io/badge/▶_LIVE_DEMO-2d6a4f?style=for-the-badge&labelColor=1a1a2e" alt="Live" /></a>
+<a href="https://github.com/gogoonbuntu/gogoonbuntu/tree/main/projects/aifarmsimu"><img src="https://img.shields.io/badge/📖_README-8b949e?style=for-the-badge&labelColor=1a1a2e" alt="README" /></a>
 </td>
 </tr>
 </table>
