@@ -79,29 +79,29 @@ jobs:
       - name: Copy READMEs and screenshots to projects/
         run: |
           # 3D Gallery
-          cp _tmp/3dgallery/README.md projects/3dgallery/README.md
-          rsync -a --delete --include='*.png' --include='*.jpg' --include='*.jpeg' --include='*.gif' --include='*/' --exclude='*' _tmp/3dgallery/screenshots/ projects/3dgallery/screenshots/
+          [ -f _tmp/3dgallery/README.md ] && cp _tmp/3dgallery/README.md projects/3dgallery/README.md
+          [ -d _tmp/3dgallery/screenshots ] && rsync -a --delete --include='*.png' --include='*.jpg' --include='*.jpeg' --include='*.gif' --include='*/' --exclude='*' _tmp/3dgallery/screenshots/ projects/3dgallery/screenshots/
 
           # Chiwi Pixel RPG
-          cp _tmp/chiwi-pixel-rpg/README.md projects/chiwi-pixel-rpg/README.md
-          rsync -a --delete --include='*.png' --include='*.jpg' --include='*/' --exclude='*' _tmp/chiwi-pixel-rpg/docs/screenshots/ projects/chiwi-pixel-rpg/docs/screenshots/
+          [ -f _tmp/chiwi-pixel-rpg/README.md ] && cp _tmp/chiwi-pixel-rpg/README.md projects/chiwi-pixel-rpg/README.md
+          [ -d _tmp/chiwi-pixel-rpg/docs/screenshots ] && rsync -a --delete --include='*.png' --include='*.jpg' --include='*/' --exclude='*' _tmp/chiwi-pixel-rpg/docs/screenshots/ projects/chiwi-pixel-rpg/docs/screenshots/
 
           # KLS Connect
-          cp _tmp/kls-connect/README.md projects/kls-connect/README.md
-          rsync -a --delete --include='*.png' --include='*.jpg' --include='*/' --exclude='*' _tmp/kls-connect/docs/screenshots/ projects/kls-connect/docs/screenshots/
-          rsync -a --delete --include='*.png' --include='*.jpg' --include='*/' --exclude='*' _tmp/kls-connect/expo-app/screenshots/ projects/kls-connect/expo-app/screenshots/
+          [ -f _tmp/kls-connect/README.md ] && cp _tmp/kls-connect/README.md projects/kls-connect/README.md
+          [ -d _tmp/kls-connect/docs/screenshots ] && rsync -a --delete --include='*.png' --include='*.jpg' --include='*/' --exclude='*' _tmp/kls-connect/docs/screenshots/ projects/kls-connect/docs/screenshots/
+          [ -d _tmp/kls-connect/expo-app/screenshots ] && rsync -a --delete --include='*.png' --include='*.jpg' --include='*/' --exclude='*' _tmp/kls-connect/expo-app/screenshots/ projects/kls-connect/expo-app/screenshots/
 
           # WhaleFriend
-          cp _tmp/whalefriend/README.md projects/whalefriend/README.md
-          cp _tmp/whalefriend/assets/icon.png projects/whalefriend/assets/icon.png
-          rsync -a --delete --include='*.png' --include='*.jpg' --include='*/' --exclude='*' _tmp/whalefriend/docs/screenshots/ projects/whalefriend/docs/screenshots/
+          [ -f _tmp/whalefriend/README.md ] && cp _tmp/whalefriend/README.md projects/whalefriend/README.md
+          [ -f _tmp/whalefriend/assets/icon.png ] && cp _tmp/whalefriend/assets/icon.png projects/whalefriend/assets/icon.png
+          [ -d _tmp/whalefriend/docs/screenshots ] && rsync -a --delete --include='*.png' --include='*.jpg' --include='*/' --exclude='*' _tmp/whalefriend/docs/screenshots/ projects/whalefriend/docs/screenshots/
 
           # Card RPG
-          cp _tmp/cardrpg/README.md projects/cardrpg/README.md
+          [ -f _tmp/cardrpg/README.md ] && cp _tmp/cardrpg/README.md projects/cardrpg/README.md
 
           # AI Farm Simulation
-          cp _tmp/aifarmsimu/README.md projects/aifarmsimu/README.md
-          rsync -a --delete --include='*.png' --include='*.jpg' --include='*/' --exclude='*' _tmp/aifarmsimu/screenshots/ projects/aifarmsimu/screenshots/
+          [ -f _tmp/aifarmsimu/README.md ] && cp _tmp/aifarmsimu/README.md projects/aifarmsimu/README.md
+          [ -d _tmp/aifarmsimu/screenshots ] && rsync -a --delete --include='*.png' --include='*.jpg' --include='*/' --exclude='*' _tmp/aifarmsimu/screenshots/ projects/aifarmsimu/screenshots/
 
           # Cleanup
           rm -rf _tmp
